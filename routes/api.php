@@ -51,3 +51,4 @@ Route::get('/get_profile_admin/{id_admin}', [ProfileController::class, 'get_prof
 Route::get('/get_profile_dosen/{id_dosen}', [ProfileController::class, 'get_profile_dosen']);
 Route::get('/komentar_karya/{id_karya}', [KomentarController::class, 'komentar_karya']);
 Route::post('/update_karya/{id_karya}', [KaryaController::class, 'update_karya']);
+Route::get('/search/{nama}', [KaryaController::class,'search']);

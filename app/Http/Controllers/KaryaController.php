@@ -42,6 +42,14 @@ class KaryaController extends Controller
         return response()->json($karya, 200);
     }
 
+
+    public function search(Request $request,$nama)
+    {
+        $karya =Karya::where("nama","like","%".$nama."%")->get();
+        return response()->json($karya, 200);
+    }
+
+
     public function update_karya(Request $request, $id_karya)
 {
     // Validasi data yang dibutuhkan
@@ -80,5 +88,6 @@ class KaryaController extends Controller
         'message' => 'Data karya berhasil diupdate'
     ], 200);
 }
+
 
 }
